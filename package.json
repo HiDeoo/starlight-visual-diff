@@ -1,0 +1,29 @@
+{
+  "name": "visual-diff-pages",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "// TODO(HiDeoo) ",
+  "author": "HiDeoo <github@hideoo.dev> (https://hideoo.dev)",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@hideoo/prettier-config": "^2.0.1",
+    "@hideoo/tsconfig": "^2.0.3",
+    "prettier": "^3.8.3",
+    "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": ">=24.12.0"
+  },
+  "packageManager": "pnpm@11.0.8",
+  "private": true,
+  "homepage": "https://github.com/HiDeoo/visual-diff-pages",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HiDeoo/visual-diff-pages.git"
+  },
+  "bugs": "https://github.com/HiDeoo/visual-diff-pages/issues",
+  "prettier": "@hideoo/prettier-config"
+}
