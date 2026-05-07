@@ -12,5 +12,6 @@
 node_modules
 npm-debug.log*
 pnpm-debug.log*
+screenshots/
 yarn-debug.log*
 yarn-error.log*
