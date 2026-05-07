@@ -3,6 +3,8 @@
   <p>Compare Starlight documentation pages for visual differences.</p>
 </div>
 
+Useful when working on large refactors, dependency upgrades, or other changes that should not change the visual appearance of documentation pages.
+
 ## Getting Started
 
 1. Clone the repository
