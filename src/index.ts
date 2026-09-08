@@ -185,7 +185,11 @@ async function takeScreenshot(page: Page, screenshotPath: string) {
 
   await page.waitForTimeout(500)
 
-  await page.screenshot({ path: screenshotPath, fullPage: true })
+  await page.screenshot({
+    path: screenshotPath,
+    fullPage: true,
+    style: 'astro-dev-toolbar { display: none; }',
+  })
 }
 
 function getScreenshotDirectoryPath(type: ScreenshotType) {
