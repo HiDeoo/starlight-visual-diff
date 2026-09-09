@@ -4,6 +4,10 @@ export default {
     baseline: 'https://starlight.astro.build',
     candidate: 'http://localhost:4321',
   },
+
+  /** Whether to use a mobile viewport size when taking screenshots. */
+  mobileViewport: false,
+
   /** A list of all the routes to visually compare between the baseline and candidate versions. */
   paths: ['/', '/getting-started/'],
   /** The maximum number of mismatched pixels between the baseline and candidate page screenshots. */
