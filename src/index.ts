@@ -29,6 +29,9 @@ async function runVisualDiff() {
 
     for (const routePath of config.paths) {
       const page = await context.newPage()
+      if (config.mobileViewport) {
+        await page.setViewportSize({ width: 375, height: 667 })
+      }
       const updateStatus = logVisualDiffStatus(routePath)
 
       try {
@@ -198,7 +201,12 @@ function getScreenshotDirectoryPath(type: ScreenshotType) {
 
 function getScreenshotPath(routePath: string, type: ScreenshotType) {
   const slug = routePath.replace(/\//g, '-').replace(/^-/, '').replace(/-$/, '').replace(/^$/, 'index')
-  const hash = crypto.createHash('sha256').update(routePath).digest('hex').slice(0, 8)
+  const hash = crypto
+    .createHash('sha256')
+    .update(JSON.stringify({ mobileViewport: config.mobileViewport }))
+    .update(routePath)
+    .digest('hex')
+    .slice(0, 8)
 
   return path.join(getScreenshotDirectoryPath(type), `${slug}-${hash}.png`)
 }
