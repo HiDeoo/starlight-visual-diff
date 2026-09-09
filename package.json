@@ -6,6 +6,7 @@
   "author": "HiDeoo <github@hideoo.dev> (https://hideoo.dev)",
   "type": "module",
   "scripts": {
+    "clean": "node -e \"require('node:fs').rmSync('screenshots', { recursive: true, force: true })\"",
     "start": "playwright install --with-deps chromium && node src/index.ts"
   },
   "dependencies": {
