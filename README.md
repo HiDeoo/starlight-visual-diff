@@ -26,6 +26,19 @@ The following diff image shows visual differences caused by a small heading `lin
 
 ![Visual diff screenshot highlighting layout shifts in a Starlight documentation page](./visual-diff.png)
 
+## Caching
+
+Baseline screenshots are cached between runs. Changes to the baseline site or rendering environment can make cached screenshots outdated and cause unexpected visual differences.
+
+For example, on macOS, connecting a mouse with the _Show scroll bars_ setting set to _Automatically based on mouse or trackpad_ can change sidebar spacing without any changes to the page code.
+
+To delete all screenshots, including cached ones, use the `clean` script before running the visual diff again.
+
+```bash
+pnpm clean
+pnpm start
+```
+
 ## License
 
 Licensed under the MIT License, Copyright © HiDeoo.
