@@ -153,7 +153,7 @@ async function compareScreenshots(screenshotPath1: string, screenshotPath2: stri
   const diffImage = new PNG(diffSize)
 
   const diffPixels = pixelmatch(screenshot1.data, screenshot2.data, diffImage.data, diffSize.width, diffSize.height, {
-    threshold: 0.2,
+    threshold: 0.1,
   })
 
   return { diffPixels, diffImage }
