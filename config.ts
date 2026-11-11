@@ -12,4 +12,7 @@ export default {
   paths: ['/', '/getting-started/'],
   /** The maximum number of mismatched pixels between the baseline and candidate page screenshots. */
   maxDiffPixels: 10,
+
+  /** CSS selectors to ignore. These elements will be removed from the page before taking the screenshot. */
+  ignoreSelectors: ['astro-dev-toolbar'],
 }

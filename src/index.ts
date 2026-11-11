@@ -191,7 +191,7 @@ async function takeScreenshot(page: Page, screenshotPath: string) {
   await page.screenshot({
     path: screenshotPath,
     fullPage: true,
-    style: 'astro-dev-toolbar { display: none; }',
+    style: `${config.ignoreSelectors.join(', ')} { display: none; }`,
   })
 }
 
