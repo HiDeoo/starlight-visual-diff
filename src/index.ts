@@ -191,7 +191,7 @@ async function takeScreenshot(page: Page, screenshotPath: string) {
   await page.screenshot({
     path: screenshotPath,
     fullPage: true,
-    style: 'astro-dev-toolbar { display: none; }',
+    style: `${config.ignoreSelectors.join(', ')} { display: none; }`,
   })
 }
 
@@ -203,7 +203,7 @@ function getScreenshotPath(routePath: string, type: ScreenshotType) {
   const slug = routePath.replace(/\//g, '-').replace(/^-/, '').replace(/-$/, '').replace(/^$/, 'index')
   const hash = crypto
     .createHash('sha256')
-    .update(JSON.stringify({ mobileViewport: config.mobileViewport }))
+    .update(JSON.stringify({ mobileViewport: config.mobileViewport, ignoreSelectors: config.ignoreSelectors }))
     .update(routePath)
     .digest('hex')
     .slice(0, 8)
